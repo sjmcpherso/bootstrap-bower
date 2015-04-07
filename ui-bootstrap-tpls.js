@@ -2,7 +2,7 @@
  * angular-ui-bootstrap
  * http://angular-ui.github.io/bootstrap/
 
- * Version: 0.12.1 - 2015-02-20
+ * Version: 0.12.1-extended - 2015-02-20
  * License: MIT
  */
 angular.module("ui.bootstrap", ["ui.bootstrap.tpls", "ui.bootstrap.transition","ui.bootstrap.collapse","ui.bootstrap.accordion","ui.bootstrap.alert","ui.bootstrap.bindHtml","ui.bootstrap.buttons","ui.bootstrap.carousel","ui.bootstrap.dateparser","ui.bootstrap.position","ui.bootstrap.datepicker","ui.bootstrap.dropdown","ui.bootstrap.modal","ui.bootstrap.pagination","ui.bootstrap.tooltip","ui.bootstrap.popover","ui.bootstrap.progressbar","ui.bootstrap.rating","ui.bootstrap.tabs","ui.bootstrap.timepicker","ui.bootstrap.typeahead"]);
@@ -3610,6 +3610,13 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position', 'ui.bootstrap
         element.attr('aria-expanded', false);
       };
 
+      var setNoResult = function(search) {
+          scope.matches = [{
+                isNoResult: true,
+                noResultText: "No results found for <strong>" + search + "</strong>"
+          }];
+      };
+
       var getMatchId = function(index) {
         return popupId + '-option-' + index;
       };
@@ -3658,7 +3665,8 @@ angular.module('ui.bootstrap.typeahead', ['ui.bootstrap.position', 'ui.bootstrap
 
               element.attr('aria-expanded', true);
             } else {
-              resetMatches();
+              setNoResult(inputValue);
+              //resetMatches();
             }
           }
           if (onCurrentRequest) {

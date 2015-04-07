@@ -1,8 +1,8 @@
 {
     "author": {
-        "name": "https://github.com/angular-ui/bootstrap/graphs/contributors"
+        "name": "https://github.com/sjmcpherso"
     },
-    "name": "angular-bootstrap",
+    "name": "angular-bootstrap-sjmcpherso",
     "keywords": [
         "angular",
         "angular-ui",
@@ -10,10 +10,10 @@
     ],
     "license": "MIT",
     "ignore": [],
-    "description": "Native AngularJS (Angular) directives for Bootstrap.",
-    "version": "0.12.1",
+    "description": "Native AngularJS (Angular) directives for Bootstrap. (With Extended Typeahead No Results functionality)",
+    "version": "0.12.1-extended",
     "main": ["./ui-bootstrap-tpls.js"],
     "dependencies": {
-        "angular": ">=1 <1.3.0"
+        "angular": ">=1 <1.4.0"
     }    
 }
